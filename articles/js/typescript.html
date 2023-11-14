@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title># 泛型 | 打工是不可能打工</title>
+    <meta name="description" content="个人博客">
+    <link rel="preload stylesheet" href="/blog/assets/style.d98b1033.css" as="style">
+    
+    <script type="module" src="/blog/assets/app.2e43f0a4.js"></script>
+    <link rel="preload" href="/blog/assets/inter-roman-latin.2ed14f66.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="modulepreload" href="/blog/assets/chunks/framework.d7a29f29.js">
+    <link rel="modulepreload" href="/blog/assets/chunks/theme.78dc47f5.js">
+    <link rel="modulepreload" href="/blog/assets/articles_js_typescript.md.309c5e85.lean.js">
+    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
+    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
+  </head>
+  <body>
+    <div id="app"><div class="Layout" data-v-5a346dfe><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0f60ec36></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0f60ec36> Skip to content </a><!--]--><!----><header class="VPNav" data-v-5a346dfe data-v-ae24b3ad><div class="VPNavBar has-sidebar" data-v-ae24b3ad data-v-a0fd61f4><div class="container" data-v-a0fd61f4><div class="title" data-v-a0fd61f4><div class="VPNavBarTitle has-sidebar" data-v-a0fd61f4 data-v-86d1bed8><a class="title" href="/blog/" data-v-86d1bed8><!--[--><!--]--><!----><!--[-->打工是不可能打工<!--]--><!--[--><!--]--></a></div></div><div class="content" data-v-a0fd61f4><div class="curtain" data-v-a0fd61f4></div><div class="content-body" data-v-a0fd61f4><!--[--><!--]--><div class="VPNavBarSearch search" data-v-a0fd61f4><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-a0fd61f4 data-v-7f418b0f><span id="main-nav-aria-label" class="visually-hidden" data-v-7f418b0f>Main Navigation</span><!--[--><!--[--><div class="VPFlyout VPNavBarMenuGroup" data-v-7f418b0f data-v-9c007e85><button type="button" class="button" aria-haspopup="true" aria-expanded="false" data-v-9c007e85><span class="text" data-v-9c007e85><!----><span data-v-9c007e85>其他</span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="text-icon" data-v-9c007e85><path d="M12,16c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.3,5.3l5.3-5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-6,6C12.5,15.9,12.3,16,12,16z"></path></svg></span></button><div class="menu" data-v-9c007e85><div class="VPMenu" data-v-9c007e85 data-v-e7ea1737><div class="items" data-v-e7ea1737><!--[--><!--[--><div class="VPMenuLink" data-v-e7ea1737 data-v-43f1e123><a class="VPLink link" href="/blog/articles/js/js.html" data-v-43f1e123><!--[-->js<!--]--></a></div><!--]--><!--[--><div class="VPMenuLink" data-v-e7ea1737 data-v-43f1e123><a class="VPLink link" href="/blog/articles/other/%E4%BB%A3%E7%A0%81.html" data-v-43f1e123><!--[-->其他<!--]--></a></div><!--]--><!--]--></div><!--[--><!--]--></div></div></div><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-a0fd61f4 data-v-e6aabb21><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title="toggle dark mode" aria-checked="false" data-v-e6aabb21 data-v-ce54a7d1 data-v-b1685198><span class="check" data-v-b1685198><span class="icon" data-v-b1685198><!--[--><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="sun" data-v-ce54a7d1><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z"></path><path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path><path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path><path d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z"></path><path d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z"></path><path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path><path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path><path d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z"></path><path d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="moon" data-v-ce54a7d1><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-a0fd61f4 data-v-0394ad82 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/3104026951" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-f80f8133><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-a0fd61f4 data-v-d0bd9dde data-v-9c007e85><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-9c007e85><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="icon" data-v-9c007e85><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="5" cy="12" r="2"></circle></svg></button><div class="menu" data-v-9c007e85><div class="VPMenu" data-v-9c007e85 data-v-e7ea1737><!----><!--[--><!--[--><!----><div class="group" data-v-d0bd9dde><div class="item appearance" data-v-d0bd9dde><p class="label" data-v-d0bd9dde>Appearance</p><div class="appearance-action" data-v-d0bd9dde><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title="toggle dark mode" aria-checked="false" data-v-d0bd9dde data-v-ce54a7d1 data-v-b1685198><span class="check" data-v-b1685198><span class="icon" data-v-b1685198><!--[--><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="sun" data-v-ce54a7d1><path d="M12,18c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S15.3,18,12,18zM12,8c-2.2,0-4,1.8-4,4c0,2.2,1.8,4,4,4c2.2,0,4-1.8,4-4C16,9.8,14.2,8,12,8z"></path><path d="M12,4c-0.6,0-1-0.4-1-1V1c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,3.6,12.6,4,12,4z"></path><path d="M12,24c-0.6,0-1-0.4-1-1v-2c0-0.6,0.4-1,1-1s1,0.4,1,1v2C13,23.6,12.6,24,12,24z"></path><path d="M5.6,6.6c-0.3,0-0.5-0.1-0.7-0.3L3.5,4.9c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C6.2,6.5,5.9,6.6,5.6,6.6z"></path><path d="M19.8,20.8c-0.3,0-0.5-0.1-0.7-0.3l-1.4-1.4c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.4,1.4c0.4,0.4,0.4,1,0,1.4C20.3,20.7,20,20.8,19.8,20.8z"></path><path d="M3,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S3.6,13,3,13z"></path><path d="M23,13h-2c-0.6,0-1-0.4-1-1s0.4-1,1-1h2c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path><path d="M4.2,20.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C4.7,20.7,4.5,20.8,4.2,20.8z"></path><path d="M18.4,6.6c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l1.4-1.4c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-1.4,1.4C18.9,6.5,18.6,6.6,18.4,6.6z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="moon" data-v-ce54a7d1><path d="M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z"></path></svg><!--]--></span></span></button></div></div></div><div class="group" data-v-d0bd9dde><div class="item social-links" data-v-d0bd9dde><div class="VPSocialLinks social-links-list" data-v-d0bd9dde data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/3104026951" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-f80f8133><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-a0fd61f4 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><!----></header><div class="VPLocalNav reached-top" data-v-5a346dfe data-v-79c8c1df><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-79c8c1df><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewbox="0 0 24 24" class="menu-icon" data-v-79c8c1df><path d="M17,11H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S17.6,11,17,11z"></path><path d="M21,7H3C2.4,7,2,6.6,2,6s0.4-1,1-1h18c0.6,0,1,0.4,1,1S21.6,7,21,7z"></path><path d="M21,15H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h18c0.6,0,1,0.4,1,1S21.6,15,21,15z"></path><path d="M17,19H3c-0.6,0-1-0.4-1-1s0.4-1,1-1h14c0.6,0,1,0.4,1,1S17.6,19,17,19z"></path></svg><span class="menu-text" data-v-79c8c1df>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-79c8c1df data-v-1c15a60a><button data-v-1c15a60a>Return to top</button><!----></div></div><aside class="VPSidebar" data-v-5a346dfe data-v-b00e2fdd><div class="curtain" data-v-b00e2fdd></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-b00e2fdd><span class="visually-hidden" id="sidebar-aria-label" data-v-b00e2fdd> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="group" data-v-b00e2fdd><section class="VPSidebarItem level-0 has-active" data-v-b00e2fdd data-v-e31bd47b><div class="item" role="button" tabindex="0" data-v-e31bd47b><div class="indicator" data-v-e31bd47b></div><h2 class="text" data-v-e31bd47b>基础</h2><!----></div><div class="items" data-v-e31bd47b><!--[--><div class="VPSidebarItem level-1 is-link" data-v-e31bd47b data-v-e31bd47b><div class="item" data-v-e31bd47b><div class="indicator" data-v-e31bd47b></div><a class="VPLink link link" href="/blog/articles/js/js.html" data-v-e31bd47b><!--[--><p class="text" data-v-e31bd47b>js</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-e31bd47b data-v-e31bd47b><div class="item" data-v-e31bd47b><div class="indicator" data-v-e31bd47b></div><a class="VPLink link link" href="/blog/articles/js/typescript.html" data-v-e31bd47b><!--[--><p class="text" data-v-e31bd47b>typescript</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><div class="group" data-v-b00e2fdd><div class="VPSidebarItem level-0" data-v-b00e2fdd data-v-e31bd47b><div class="item" role="button" tabindex="0" data-v-e31bd47b><div class="indicator" data-v-e31bd47b></div><p class="text" data-v-e31bd47b>代码段</p><!----></div><!----></div></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-5a346dfe data-v-669faec9><div class="VPDoc has-sidebar has-aside" data-v-669faec9 data-v-6b87e69f><!--[--><!--]--><div class="container" data-v-6b87e69f><div class="aside" data-v-6b87e69f><div class="aside-curtain" data-v-6b87e69f></div><div class="aside-container" data-v-6b87e69f><div class="aside-content" data-v-6b87e69f><div class="VPDocAside" data-v-6b87e69f data-v-3f215769><!--[--><!--]--><!--[--><!--]--><div class="VPDocAsideOutline" role="navigation" data-v-3f215769 data-v-d330b1bb><div class="content" data-v-d330b1bb><div class="outline-marker" data-v-d330b1bb></div><div class="outline-title" role="heading" aria-level="2" data-v-d330b1bb>On this page</div><nav aria-labelledby="doc-outline-aria-label" data-v-d330b1bb><span class="visually-hidden" id="doc-outline-aria-label" data-v-d330b1bb> Table of Contents for current page </span><ul class="root" data-v-d330b1bb data-v-d0ee3533><!--[--><!--]--></ul></nav></div></div><!--[--><!--]--><div class="spacer" data-v-3f215769></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-6b87e69f><div class="content-container" data-v-6b87e69f><!--[--><!--]--><!----><main class="main" data-v-6b87e69f><div style="position:relative;" class="vp-doc _blog_articles_js_typescript" data-v-6b87e69f><div><h1 id="泛型" tabindex="-1"># 泛型 <a class="header-anchor" href="#泛型" aria-label="Permalink to &quot;# 泛型&quot;">​</a></h1><h3 id="类型别名中的泛型" tabindex="-1">类型别名中的泛型 <a class="header-anchor" href="#类型别名中的泛型" aria-label="Permalink to &quot;类型别名中的泛型&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// 等价于一个接受参数的函数</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Factory&lt;T&gt; = T | number | string;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// TypeScript 的内置工具类型</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Partial&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">    [P in keyof T]?: T[P];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;">interface Obj {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  prop1: string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  prop2: number;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  prop3: boolean;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  prop4: () =&gt; void;</span></span>
+<span class="line"><span style="color:#e1e4e8;">}</span></span>
+<span class="line"><span style="color:#e1e4e8;">type PartialObj = Partial&lt;Obj&gt;;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// 等价于一个接受参数的函数</span></span>
+<span class="line"><span style="color:#24292e;">type Factory&lt;T&gt; = T | number | string;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// TypeScript 的内置工具类型</span></span>
+<span class="line"><span style="color:#24292e;">type Partial&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">    [P in keyof T]?: T[P];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;">interface Obj {</span></span>
+<span class="line"><span style="color:#24292e;">  prop1: string;</span></span>
+<span class="line"><span style="color:#24292e;">  prop2: number;</span></span>
+<span class="line"><span style="color:#24292e;">  prop3: boolean;</span></span>
+<span class="line"><span style="color:#24292e;">  prop4: () =&gt; void;</span></span>
+<span class="line"><span style="color:#24292e;">}</span></span>
+<span class="line"><span style="color:#24292e;">type PartialObj = Partial&lt;Obj&gt;;</span></span></code></pre></div><h3 id="泛型约束与默认值" tabindex="-1">泛型约束与默认值 <a class="header-anchor" href="#泛型约束与默认值" aria-label="Permalink to &quot;泛型约束与默认值&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// 给一个参数的默认值</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Factory&lt;T = boolean&gt; = T | number | string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">const foo: Factory = false;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// 给一个参数的默认值</span></span>
+<span class="line"><span style="color:#24292e;">type Factory&lt;T = boolean&gt; = T | number | string;</span></span>
+<span class="line"><span style="color:#24292e;">const foo: Factory = false;</span></span></code></pre></div><h4 id="extend" tabindex="-1">extend <a class="header-anchor" href="#extend" aria-label="Permalink to &quot;extend&quot;">​</a></h4><p>extends关键字来约束传入的泛型参数必须符合要求，A extends B 意味着 A 是 B 的子类型，类似于“柯基 extends 狗”</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">type ResStatus&lt;ResCode extends number&gt; = ResCode extends 10000 | 10001 | 10002</span></span>
+<span class="line"><span style="color:#e1e4e8;">  ? &#39;success&#39;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  : &#39;failure&#39;;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  </span></span>
+<span class="line"><span style="color:#e1e4e8;">type Res1 = ResStatus&lt;10000&gt;; // &quot;success&quot;</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Res2 = ResStatus&lt;20000&gt;; // &quot;failure&quot;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type Res3 = ResStatus&lt;&#39;10000&#39;&gt;; // 类型“string”不满足约束“number”。</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">type ResStatus&lt;ResCode extends number&gt; = ResCode extends 10000 | 10001 | 10002</span></span>
+<span class="line"><span style="color:#24292e;">  ? &#39;success&#39;</span></span>
+<span class="line"><span style="color:#24292e;">  : &#39;failure&#39;;</span></span>
+<span class="line"><span style="color:#24292e;">  </span></span>
+<span class="line"><span style="color:#24292e;">type Res1 = ResStatus&lt;10000&gt;; // &quot;success&quot;</span></span>
+<span class="line"><span style="color:#24292e;">type Res2 = ResStatus&lt;20000&gt;; // &quot;failure&quot;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type Res3 = ResStatus&lt;&#39;10000&#39;&gt;; // 类型“string”不满足约束“number”。</span></span></code></pre></div><h4 id="keyof" tabindex="-1">keyof <a class="header-anchor" href="#keyof" aria-label="Permalink to &quot;keyof&quot;">​</a></h4><p>类比如JS中的Object.keys()</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">interface Foo {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  propA: number;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  propB: boolean;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  propC: string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">}</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type A = keyof Foo</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type PropAType = Foo[&#39;propA&#39;]; // number</span></span>
+<span class="line"><span style="color:#e1e4e8;">type PropBType = Foo[&#39;propB&#39;]; // boolean</span></span>
+<span class="line"><span style="color:#e1e4e8;">type PropTypeUnion = Foo[keyof Foo]; // string | number | boolean</span></span>
+<span class="line"><span style="color:#e1e4e8;">type PropTypeUnion2 = Foo[A]; // string | number | boolean</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">interface Foo {</span></span>
+<span class="line"><span style="color:#24292e;">  propA: number;</span></span>
+<span class="line"><span style="color:#24292e;">  propB: boolean;</span></span>
+<span class="line"><span style="color:#24292e;">  propC: string;</span></span>
+<span class="line"><span style="color:#24292e;">}</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type A = keyof Foo</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type PropAType = Foo[&#39;propA&#39;]; // number</span></span>
+<span class="line"><span style="color:#24292e;">type PropBType = Foo[&#39;propB&#39;]; // boolean</span></span>
+<span class="line"><span style="color:#24292e;">type PropTypeUnion = Foo[keyof Foo]; // string | number | boolean</span></span>
+<span class="line"><span style="color:#24292e;">type PropTypeUnion2 = Foo[A]; // string | number | boolean</span></span></code></pre></div><h3 id="多泛型关联" tabindex="-1">多泛型关联 <a class="header-anchor" href="#多泛型关联" aria-label="Permalink to &quot;多泛型关联&quot;">​</a></h3><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">type Conditional&lt;Type, Condition, TruthyResult, FalsyResult&gt; =</span></span>
+<span class="line"><span style="color:#e1e4e8;">  Type extends Condition ? TruthyResult : FalsyResult;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">//  &quot;passed!&quot;</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Result1 = Conditional&lt;&#39;linbudu&#39;, string, &#39;passed!&#39;, &#39;rejected!&#39;&gt;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// &quot;rejected!&quot;</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Result2 = Conditional&lt;&#39;linbudu&#39;, boolean, &#39;passed!&#39;, &#39;rejected!&#39;&gt;;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">type Conditional&lt;Type, Condition, TruthyResult, FalsyResult&gt; =</span></span>
+<span class="line"><span style="color:#24292e;">  Type extends Condition ? TruthyResult : FalsyResult;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">//  &quot;passed!&quot;</span></span>
+<span class="line"><span style="color:#24292e;">type Result1 = Conditional&lt;&#39;linbudu&#39;, string, &#39;passed!&#39;, &#39;rejected!&#39;&gt;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// &quot;rejected!&quot;</span></span>
+<span class="line"><span style="color:#24292e;">type Result2 = Conditional&lt;&#39;linbudu&#39;, boolean, &#39;passed!&#39;, &#39;rejected!&#39;&gt;;</span></span></code></pre></div><h3 id="对象类型中的泛型" tabindex="-1">对象类型中的泛型 <a class="header-anchor" href="#对象类型中的泛型" aria-label="Permalink to &quot;对象类型中的泛型&quot;">​</a></h3><p>最常见的一个例子应该还是响应类型结构的泛型处理，预留出了实际响应数据的泛型坑位，然后在你的请求函数中就可以传入特定的响应类型了</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">interface IRes&lt;TData = unknown&gt; {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  code: number;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  error?: string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  data: TData;</span></span>
+<span class="line"><span style="color:#e1e4e8;">}</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type IPaginationRes&lt;TItem = unknown&gt; {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  data: TItem[];</span></span>
+<span class="line"><span style="color:#e1e4e8;">  page: number;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  totalCount: number;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  hasNextPage: boolean;</span></span>
+<span class="line"><span style="color:#e1e4e8;">}</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type IUserProfileRes {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  name: string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  homepage: string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  avatar: string;</span></span>
+<span class="line"><span style="color:#e1e4e8;">}</span></span>
+<span class="line"><span style="color:#e1e4e8;">function fetchUserProfile(): Promise&lt;IRes&lt;IUserProfileRes&gt;&gt; {}</span></span>
+<span class="line"><span style="color:#e1e4e8;">function fetchUserProfileList(): Promise&lt;IRes&lt;IPaginationRes&lt;IUserProfileRes&gt;&gt;&gt; {}</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">interface IRes&lt;TData = unknown&gt; {</span></span>
+<span class="line"><span style="color:#24292e;">  code: number;</span></span>
+<span class="line"><span style="color:#24292e;">  error?: string;</span></span>
+<span class="line"><span style="color:#24292e;">  data: TData;</span></span>
+<span class="line"><span style="color:#24292e;">}</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type IPaginationRes&lt;TItem = unknown&gt; {</span></span>
+<span class="line"><span style="color:#24292e;">  data: TItem[];</span></span>
+<span class="line"><span style="color:#24292e;">  page: number;</span></span>
+<span class="line"><span style="color:#24292e;">  totalCount: number;</span></span>
+<span class="line"><span style="color:#24292e;">  hasNextPage: boolean;</span></span>
+<span class="line"><span style="color:#24292e;">}</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type IUserProfileRes {</span></span>
+<span class="line"><span style="color:#24292e;">  name: string;</span></span>
+<span class="line"><span style="color:#24292e;">  homepage: string;</span></span>
+<span class="line"><span style="color:#24292e;">  avatar: string;</span></span>
+<span class="line"><span style="color:#24292e;">}</span></span>
+<span class="line"><span style="color:#24292e;">function fetchUserProfile(): Promise&lt;IRes&lt;IUserProfileRes&gt;&gt; {}</span></span>
+<span class="line"><span style="color:#24292e;">function fetchUserProfileList(): Promise&lt;IRes&lt;IPaginationRes&lt;IUserProfileRes&gt;&gt;&gt; {}</span></span></code></pre></div><h3 id="函数中的泛型" tabindex="-1">函数中的泛型 <a class="header-anchor" href="#函数中的泛型" aria-label="Permalink to &quot;函数中的泛型&quot;">​</a></h3><p>在基于参数类型进行填充泛型时，其类型信息会被推断到尽可能精确的程度</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// TS内置类型</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Pick&lt;T, K extends keyof T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">    [Key in K]: T[Key];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// lodash 里面那个pick函数</span></span>
+<span class="line"><span style="color:#e1e4e8;">pick&lt;T extends object, U extends keyof T&gt;(object: T, ...props: Array&lt;U&gt;): Pick&lt;T, U&gt;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">const object = { &#39;a&#39;: 1, &#39;b&#39;: &#39;2&#39;, &#39;c&#39;: 3 };</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">pick(object, [&#39;a&#39;, &#39;c&#39;]);</span></span>
+<span class="line"><span style="color:#e1e4e8;">// =&gt; { &#39;a&#39;: 1, &#39;c&#39;: 3 }</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// TS内置类型</span></span>
+<span class="line"><span style="color:#24292e;">type Pick&lt;T, K extends keyof T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">    [Key in K]: T[Key];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// lodash 里面那个pick函数</span></span>
+<span class="line"><span style="color:#24292e;">pick&lt;T extends object, U extends keyof T&gt;(object: T, ...props: Array&lt;U&gt;): Pick&lt;T, U&gt;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">const object = { &#39;a&#39;: 1, &#39;b&#39;: &#39;2&#39;, &#39;c&#39;: 3 };</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">pick(object, [&#39;a&#39;, &#39;c&#39;]);</span></span>
+<span class="line"><span style="color:#24292e;">// =&gt; { &#39;a&#39;: 1, &#39;c&#39;: 3 }</span></span></code></pre></div><h3 id="infer-关键字" tabindex="-1">infer 关键字 <a class="header-anchor" href="#infer-关键字" aria-label="Permalink to &quot;infer 关键字&quot;">​</a></h3><p>TypeScript 中支持通过 infer 关键字来在条件类型中提取类型的某一部分信息</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// 提取首尾两个</span></span>
+<span class="line"><span style="color:#e1e4e8;">type ExtractStartAndEnd&lt;T extends any[]&gt; = T extends [</span></span>
+<span class="line"><span style="color:#e1e4e8;">  infer Start,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  ...any[],</span></span>
+<span class="line"><span style="color:#e1e4e8;">  infer End</span></span>
+<span class="line"><span style="color:#e1e4e8;">]</span></span>
+<span class="line"><span style="color:#e1e4e8;">  ? [Start, End]</span></span>
+<span class="line"><span style="color:#e1e4e8;">  : T;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// 调换首尾两个</span></span>
+<span class="line"><span style="color:#e1e4e8;">type SwapStartAndEnd&lt;T extends any[]&gt; = T extends [</span></span>
+<span class="line"><span style="color:#e1e4e8;">  infer Start,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  ...infer Left,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  infer End</span></span>
+<span class="line"><span style="color:#e1e4e8;">]</span></span>
+<span class="line"><span style="color:#e1e4e8;">  ? [End, ...Left, Start]</span></span>
+<span class="line"><span style="color:#e1e4e8;">  : T;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// 提取首尾两个</span></span>
+<span class="line"><span style="color:#24292e;">type ExtractStartAndEnd&lt;T extends any[]&gt; = T extends [</span></span>
+<span class="line"><span style="color:#24292e;">  infer Start,</span></span>
+<span class="line"><span style="color:#24292e;">  ...any[],</span></span>
+<span class="line"><span style="color:#24292e;">  infer End</span></span>
+<span class="line"><span style="color:#24292e;">]</span></span>
+<span class="line"><span style="color:#24292e;">  ? [Start, End]</span></span>
+<span class="line"><span style="color:#24292e;">  : T;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// 调换首尾两个</span></span>
+<span class="line"><span style="color:#24292e;">type SwapStartAndEnd&lt;T extends any[]&gt; = T extends [</span></span>
+<span class="line"><span style="color:#24292e;">  infer Start,</span></span>
+<span class="line"><span style="color:#24292e;">  ...infer Left,</span></span>
+<span class="line"><span style="color:#24292e;">  infer End</span></span>
+<span class="line"><span style="color:#24292e;">]</span></span>
+<span class="line"><span style="color:#24292e;">  ? [End, ...Left, Start]</span></span>
+<span class="line"><span style="color:#24292e;">  : T;</span></span></code></pre></div><h1 id="内置工具类型拓展" tabindex="-1">内置工具类型拓展 <a class="header-anchor" href="#内置工具类型拓展" aria-label="Permalink to &quot;内置工具类型拓展&quot;">​</a></h1><h3 id="内置工具类型" tabindex="-1">内置工具类型 <a class="header-anchor" href="#内置工具类型" aria-label="Permalink to &quot;内置工具类型&quot;">​</a></h3><p>在ts中有很多内置的工具类型，比如：</p><h4 id="_1-属性修饰工具类型" tabindex="-1">1.属性修饰工具类型 <a class="header-anchor" href="#_1-属性修饰工具类型" aria-label="Permalink to &quot;1.属性修饰工具类型&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">type Partial&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">    [P in keyof T]?: T[P];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type Required&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">    [P in keyof T]-?: T[P];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">type Partial&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">    [P in keyof T]?: T[P];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type Required&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">    [P in keyof T]-?: T[P];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span></code></pre></div><p>其中，Partial 与 Required 可以认为是一对工具类型，它们的功能是相反的，而在实现上，它们的唯一差异是在索引类型签名处的可选修饰符，Partial 是 ?</p><h4 id="_2-结构工具类型" tabindex="-1">2.结构工具类型 <a class="header-anchor" href="#_2-结构工具类型" aria-label="Permalink to &quot;2.结构工具类型&quot;">​</a></h4><p>这一部分的工具类型主要使用条件类型以及映射类型、索引类型。</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// Record&lt;string, unknown&gt; 和 Record&lt;string, any&gt; 是日常使用较多的形式，通常我们使用这两者来代替 object</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Record&lt;K extends keyof any, T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">    [P in K]: T;</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// Pick和Omit和lodash里的是类似的</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Pick&lt;T, K extends keyof T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">    [P in K]: T[P];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type Omit&lt;T, K extends keyof any&gt; = Pick&lt;T, Exclude&lt;keyof T, K&gt;&gt;;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// Record&lt;string, unknown&gt; 和 Record&lt;string, any&gt; 是日常使用较多的形式，通常我们使用这两者来代替 object</span></span>
+<span class="line"><span style="color:#24292e;">type Record&lt;K extends keyof any, T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">    [P in K]: T;</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// Pick和Omit和lodash里的是类似的</span></span>
+<span class="line"><span style="color:#24292e;">type Pick&lt;T, K extends keyof T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">    [P in K]: T[P];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type Omit&lt;T, K extends keyof any&gt; = Pick&lt;T, Exclude&lt;keyof T, K&gt;&gt;;</span></span></code></pre></div><h4 id="_3-集合工具类型" tabindex="-1">3.集合工具类型 <a class="header-anchor" href="#_3-集合工具类型" aria-label="Permalink to &quot;3.集合工具类型&quot;">​</a></h4><p>对于两个集合来说，通常存在交集、并集、差集、补集这么几种情况</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// 交集</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Extract&lt;T, U&gt; = T extends U ? T : never;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// 差集</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Exclude&lt;T, U&gt; = T extends U ? never : T;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// 并集</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type Concurrence&lt;A, B&gt; = A | B;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// 补集</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type Complement&lt;A, B extends A&gt; = Exclude&lt;A, B&gt;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type AExtractB = Extract&lt;1 | 2 | 3, 1 | 2 | 4&gt;; // 1 | 2</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type SetA = 1 | 2 | 3 | 5;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type SetB = 0 | 1 | 2 | 4;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type AExcludeB = Exclude&lt;SetA, SetB&gt;; // 3 | 5</span></span>
+<span class="line"><span style="color:#e1e4e8;">type BExcludeA = Exclude&lt;SetB, SetA&gt;; // 0 | 4</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// 交集</span></span>
+<span class="line"><span style="color:#24292e;">type Extract&lt;T, U&gt; = T extends U ? T : never;</span></span>
+<span class="line"><span style="color:#24292e;">// 差集</span></span>
+<span class="line"><span style="color:#24292e;">type Exclude&lt;T, U&gt; = T extends U ? never : T;</span></span>
+<span class="line"><span style="color:#24292e;">// 并集</span></span>
+<span class="line"><span style="color:#24292e;">export type Concurrence&lt;A, B&gt; = A | B;</span></span>
+<span class="line"><span style="color:#24292e;">// 补集</span></span>
+<span class="line"><span style="color:#24292e;">export type Complement&lt;A, B extends A&gt; = Exclude&lt;A, B&gt;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type AExtractB = Extract&lt;1 | 2 | 3, 1 | 2 | 4&gt;; // 1 | 2</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type SetA = 1 | 2 | 3 | 5;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type SetB = 0 | 1 | 2 | 4;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type AExcludeB = Exclude&lt;SetA, SetB&gt;; // 3 | 5</span></span>
+<span class="line"><span style="color:#24292e;">type BExcludeA = Exclude&lt;SetB, SetA&gt;; // 0 | 4</span></span></code></pre></div><h3 id="属性修饰进阶" tabindex="-1">属性修饰进阶 <a class="header-anchor" href="#属性修饰进阶" aria-label="Permalink to &quot;属性修饰进阶&quot;">​</a></h3><h4 id="深层的属性修饰" tabindex="-1">深层的属性修饰 <a class="header-anchor" href="#深层的属性修饰" aria-label="Permalink to &quot;深层的属性修饰&quot;">​</a></h4><p>就是类似于深拷贝的递归调用</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">export type DeepPartial&lt;T extends object&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  [K in keyof T]?: T[K] extends object ? DeepPartial&lt;T[K]&gt; : T[K];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">export type DeepRequired&lt;T extends object&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  [K in keyof T]-?: T[K] extends object ? DeepRequired&lt;T[K]&gt; : T[K];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">export type DeepPartial&lt;T extends object&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">  [K in keyof T]?: T[K] extends object ? DeepPartial&lt;T[K]&gt; : T[K];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">export type DeepRequired&lt;T extends object&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">  [K in keyof T]-?: T[K] extends object ? DeepRequired&lt;T[K]&gt; : T[K];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span></code></pre></div><h4 id="属性类型的部分修饰" tabindex="-1">属性类型的部分修饰 <a class="header-anchor" href="#属性类型的部分修饰" aria-label="Permalink to &quot;属性类型的部分修饰&quot;">​</a></h4><p>主要的做法就是把原有的对象拆分成一部分，然后再组装起来</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">type Flatten&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#e1e4e8;">  [P in keyof T]: T[P];</span></span>
+<span class="line"><span style="color:#e1e4e8;">};</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type MarkPropsAsOptional&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  T extends object,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  K extends keyof T = keyof T,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  D extends keyof T = keyof T,</span></span>
+<span class="line"><span style="color:#e1e4e8;">&gt; = Flatten&lt;Partial&lt;Pick&lt;T, K&gt;&gt; &amp; Omit&lt;T, D&gt;&gt;;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">type Flatten&lt;T&gt; = {</span></span>
+<span class="line"><span style="color:#24292e;">  [P in keyof T]: T[P];</span></span>
+<span class="line"><span style="color:#24292e;">};</span></span>
+<span class="line"><span style="color:#24292e;">export type MarkPropsAsOptional&lt;</span></span>
+<span class="line"><span style="color:#24292e;">  T extends object,</span></span>
+<span class="line"><span style="color:#24292e;">  K extends keyof T = keyof T,</span></span>
+<span class="line"><span style="color:#24292e;">  D extends keyof T = keyof T,</span></span>
+<span class="line"><span style="color:#24292e;">&gt; = Flatten&lt;Partial&lt;Pick&lt;T, K&gt;&gt; &amp; Omit&lt;T, D&gt;&gt;;</span></span></code></pre></div><h4 id="集合工具类型的延伸" tabindex="-1">集合工具类型的延伸 <a class="header-anchor" href="#集合工具类型的延伸" aria-label="Permalink to &quot;集合工具类型的延伸&quot;">​</a></h4><p>之前内置集合类型可以延伸到对象的key值的集合计算</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// 使用更精确的对象类型描述结构</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type PlainObjectType = Record&lt;string, any&gt;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// 属性名并集</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type ObjectKeysConcurrence&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  T extends PlainObjectType,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#e1e4e8;">&gt; = keyof T | keyof U;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// 属性名交集</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type ObjectKeysIntersection&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  T extends PlainObjectType,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#e1e4e8;">&gt; = Intersection&lt;keyof T, keyof U&gt;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// 属性名差集</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type ObjectKeysDifference&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  T extends PlainObjectType,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#e1e4e8;">&gt; = Difference&lt;keyof T, keyof U&gt;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">// 属性名补集</span></span>
+<span class="line"><span style="color:#e1e4e8;">export type ObjectKeysComplement&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  T extends U,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#e1e4e8;">&gt; = Complement&lt;keyof T, keyof U&gt;;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// 使用更精确的对象类型描述结构</span></span>
+<span class="line"><span style="color:#24292e;">export type PlainObjectType = Record&lt;string, any&gt;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// 属性名并集</span></span>
+<span class="line"><span style="color:#24292e;">export type ObjectKeysConcurrence&lt;</span></span>
+<span class="line"><span style="color:#24292e;">  T extends PlainObjectType,</span></span>
+<span class="line"><span style="color:#24292e;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#24292e;">&gt; = keyof T | keyof U;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// 属性名交集</span></span>
+<span class="line"><span style="color:#24292e;">export type ObjectKeysIntersection&lt;</span></span>
+<span class="line"><span style="color:#24292e;">  T extends PlainObjectType,</span></span>
+<span class="line"><span style="color:#24292e;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#24292e;">&gt; = Intersection&lt;keyof T, keyof U&gt;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// 属性名差集</span></span>
+<span class="line"><span style="color:#24292e;">export type ObjectKeysDifference&lt;</span></span>
+<span class="line"><span style="color:#24292e;">  T extends PlainObjectType,</span></span>
+<span class="line"><span style="color:#24292e;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#24292e;">&gt; = Difference&lt;keyof T, keyof U&gt;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">// 属性名补集</span></span>
+<span class="line"><span style="color:#24292e;">export type ObjectKeysComplement&lt;</span></span>
+<span class="line"><span style="color:#24292e;">  T extends U,</span></span>
+<span class="line"><span style="color:#24292e;">  U extends PlainObjectType</span></span>
+<span class="line"><span style="color:#24292e;">&gt; = Complement&lt;keyof T, keyof U&gt;;</span></span></code></pre></div><h1 id="模板字符串" tabindex="-1">模板字符串 <a class="header-anchor" href="#模板字符串" aria-label="Permalink to &quot;模板字符串&quot;">​</a></h1><p>模板字符串类型和泛型一样，可以通过JS函数传参一样，来接收参数返回一个新的值</p><h4 id="基本用法" tabindex="-1">基本用法 <a class="header-anchor" href="#基本用法" aria-label="Permalink to &quot;基本用法&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">type outPut&lt;T extends string | number | boolean&gt; = `Hello ${T}`</span></span>
+<span class="line"><span style="color:#e1e4e8;">type o1 = outPut&lt;&#39;12&#39;&gt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">type o2 = outPut&lt;string&gt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">const po1:o2 = &#39;Hello ggg&#39;;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type Version = `${number}.${number}.${number}`;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">type outPut&lt;T extends string | number | boolean&gt; = `Hello ${T}`</span></span>
+<span class="line"><span style="color:#24292e;">type o1 = outPut&lt;&#39;12&#39;&gt;</span></span>
+<span class="line"><span style="color:#24292e;">type o2 = outPut&lt;string&gt;</span></span>
+<span class="line"><span style="color:#24292e;">const po1:o2 = &#39;Hello ggg&#39;;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type Version = `${number}.${number}.${number}`;</span></span></code></pre></div><h4 id="专用工具类型" tabindex="-1">专用工具类型 <a class="header-anchor" href="#专用工具类型" aria-label="Permalink to &quot;专用工具类型&quot;">​</a></h4><p>这些工具类型专用于字符串字面量类型，包括 Uppercase、Lowercase、Capitalize 与 Uncapitalize</p><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">type UpStr&lt;T extends string&gt; = `${Uppercase&lt;T&gt;}`;</span></span>
+<span class="line"><span style="color:#e1e4e8;">type LowStr&lt;T extends string&gt; = `${Lowercase&lt;T&gt;}`;</span></span>
+<span class="line"><span style="color:#e1e4e8;">type CapStr&lt;T extends string&gt; = `${Capitalize&lt;T&gt;}`;</span></span>
+<span class="line"><span style="color:#e1e4e8;"></span></span>
+<span class="line"><span style="color:#e1e4e8;">type UpStr1 = UpStr&lt;&#39;aaa&#39;&gt; // AAA</span></span>
+<span class="line"><span style="color:#e1e4e8;">type CapStr1 = UpStr&lt;&#39;aaa&#39;&gt; // Aaa</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">type UpStr&lt;T extends string&gt; = `${Uppercase&lt;T&gt;}`;</span></span>
+<span class="line"><span style="color:#24292e;">type LowStr&lt;T extends string&gt; = `${Lowercase&lt;T&gt;}`;</span></span>
+<span class="line"><span style="color:#24292e;">type CapStr&lt;T extends string&gt; = `${Capitalize&lt;T&gt;}`;</span></span>
+<span class="line"><span style="color:#24292e;"></span></span>
+<span class="line"><span style="color:#24292e;">type UpStr1 = UpStr&lt;&#39;aaa&#39;&gt; // AAA</span></span>
+<span class="line"><span style="color:#24292e;">type CapStr1 = UpStr&lt;&#39;aaa&#39;&gt; // Aaa</span></span></code></pre></div><h1 id="ts类型编程" tabindex="-1">TS类型编程 <a class="header-anchor" href="#ts类型编程" aria-label="Permalink to &quot;TS类型编程&quot;">​</a></h1><p>对传入的类型参数（泛型）做各种逻辑运算，产生新的类型，这就是类型编程 简单点来理解就是循环、条件等各种 JS 里面有的语法它都有，JS 能写的逻辑它都能写。</p><h4 id="数组" tabindex="-1">数组 <a class="header-anchor" href="#数组" aria-label="Permalink to &quot;数组&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// 提取第一个元素的类型</span></span>
+<span class="line"><span style="color:#e1e4e8;">type GetFirst&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Arr extends [infer First, ...unknown[]] ? First : never;</span></span>
+<span class="line"><span style="color:#e1e4e8;">    </span></span>
+<span class="line"><span style="color:#e1e4e8;">// 提取最后一个元素   </span></span>
+<span class="line"><span style="color:#e1e4e8;">type GetLast&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Arr extends [...unknown[], infer Last] ? Last : never;</span></span>
+<span class="line"><span style="color:#e1e4e8;">    </span></span>
+<span class="line"><span style="color:#e1e4e8;">// 除去头部的</span></span>
+<span class="line"><span style="color:#e1e4e8;">type PopArr&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Arr extends [] ? [] </span></span>
+<span class="line"><span style="color:#e1e4e8;">        : Arr extends [...infer Rest, unknown] ? Rest : never;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// ReverseArr</span></span>
+<span class="line"><span style="color:#e1e4e8;">type ReverseArr&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Arr extends [infer First, ...infer Rest] </span></span>
+<span class="line"><span style="color:#e1e4e8;">        ? [...ReverseArr&lt;Rest&gt;, First] </span></span>
+<span class="line"><span style="color:#e1e4e8;">        : Arr;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// Includes</span></span>
+<span class="line"><span style="color:#e1e4e8;">type IsEqual&lt;A, B&gt; = (A extends B ? true : false) &amp; (B extends A ? true : false);</span></span>
+<span class="line"><span style="color:#e1e4e8;">type Includes&lt;Arr extends unknown[], FindItem&gt; = </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Arr extends [infer First, ...infer Rest]</span></span>
+<span class="line"><span style="color:#e1e4e8;">        ? IsEqual&lt;First, FindItem&gt; extends true</span></span>
+<span class="line"><span style="color:#e1e4e8;">            ? true</span></span>
+<span class="line"><span style="color:#e1e4e8;">            : Includes&lt;Rest, FindItem&gt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">        : false;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// 提取第一个元素的类型</span></span>
+<span class="line"><span style="color:#24292e;">type GetFirst&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#24292e;">    Arr extends [infer First, ...unknown[]] ? First : never;</span></span>
+<span class="line"><span style="color:#24292e;">    </span></span>
+<span class="line"><span style="color:#24292e;">// 提取最后一个元素   </span></span>
+<span class="line"><span style="color:#24292e;">type GetLast&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#24292e;">    Arr extends [...unknown[], infer Last] ? Last : never;</span></span>
+<span class="line"><span style="color:#24292e;">    </span></span>
+<span class="line"><span style="color:#24292e;">// 除去头部的</span></span>
+<span class="line"><span style="color:#24292e;">type PopArr&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#24292e;">    Arr extends [] ? [] </span></span>
+<span class="line"><span style="color:#24292e;">        : Arr extends [...infer Rest, unknown] ? Rest : never;</span></span>
+<span class="line"><span style="color:#24292e;">// ReverseArr</span></span>
+<span class="line"><span style="color:#24292e;">type ReverseArr&lt;Arr extends unknown[]&gt; = </span></span>
+<span class="line"><span style="color:#24292e;">    Arr extends [infer First, ...infer Rest] </span></span>
+<span class="line"><span style="color:#24292e;">        ? [...ReverseArr&lt;Rest&gt;, First] </span></span>
+<span class="line"><span style="color:#24292e;">        : Arr;</span></span>
+<span class="line"><span style="color:#24292e;">// Includes</span></span>
+<span class="line"><span style="color:#24292e;">type IsEqual&lt;A, B&gt; = (A extends B ? true : false) &amp; (B extends A ? true : false);</span></span>
+<span class="line"><span style="color:#24292e;">type Includes&lt;Arr extends unknown[], FindItem&gt; = </span></span>
+<span class="line"><span style="color:#24292e;">    Arr extends [infer First, ...infer Rest]</span></span>
+<span class="line"><span style="color:#24292e;">        ? IsEqual&lt;First, FindItem&gt; extends true</span></span>
+<span class="line"><span style="color:#24292e;">            ? true</span></span>
+<span class="line"><span style="color:#24292e;">            : Includes&lt;Rest, FindItem&gt;</span></span>
+<span class="line"><span style="color:#24292e;">        : false;</span></span></code></pre></div><h4 id="字符串" tabindex="-1">字符串 <a class="header-anchor" href="#字符串" aria-label="Permalink to &quot;字符串&quot;">​</a></h4><div class="language- vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki github-dark vp-code-dark"><code><span class="line"><span style="color:#e1e4e8;">// StartsWith</span></span>
+<span class="line"><span style="color:#e1e4e8;">type StartsWith&lt;Str extends string, Prefix extends string&gt; = </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Str extends `${Prefix}${string}` ? true : false;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// Replace</span></span>
+<span class="line"><span style="color:#e1e4e8;">type ReplaceStr&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">  Str extends string,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  From extends string,</span></span>
+<span class="line"><span style="color:#e1e4e8;">  To extends string</span></span>
+<span class="line"><span style="color:#e1e4e8;">  &gt; = Str extends `${infer Prefix}${From}${infer Suffix}`</span></span>
+<span class="line"><span style="color:#e1e4e8;">  ? `${Prefix}${To}${Suffix}` : Str;</span></span>
+<span class="line"><span style="color:#e1e4e8;">// ReverseStr</span></span>
+<span class="line"><span style="color:#e1e4e8;">type ReverseStr&lt;</span></span>
+<span class="line"><span style="color:#e1e4e8;">    Str extends string, </span></span>
+<span class="line"><span style="color:#e1e4e8;">    Result extends string = &#39;&#39;</span></span>
+<span class="line"><span style="color:#e1e4e8;">&gt; = Str extends `${infer First}${infer Rest}` </span></span>
+<span class="line"><span style="color:#e1e4e8;">    ? ReverseStr&lt;Rest, `${First}${Result}`&gt; </span></span>
+<span class="line"><span style="color:#e1e4e8;">    : Result;</span></span></code></pre><pre class="shiki github-light vp-code-light"><code><span class="line"><span style="color:#24292e;">// StartsWith</span></span>
+<span class="line"><span style="color:#24292e;">type StartsWith&lt;Str extends string, Prefix extends string&gt; = </span></span>
+<span class="line"><span style="color:#24292e;">    Str extends `${Prefix}${string}` ? true : false;</span></span>
+<span class="line"><span style="color:#24292e;">// Replace</span></span>
+<span class="line"><span style="color:#24292e;">type ReplaceStr&lt;</span></span>
+<span class="line"><span style="color:#24292e;">  Str extends string,</span></span>
+<span class="line"><span style="color:#24292e;">  From extends string,</span></span>
+<span class="line"><span style="color:#24292e;">  To extends string</span></span>
+<span class="line"><span style="color:#24292e;">  &gt; = Str extends `${infer Prefix}${From}${infer Suffix}`</span></span>
+<span class="line"><span style="color:#24292e;">  ? `${Prefix}${To}${Suffix}` : Str;</span></span>
+<span class="line"><span style="color:#24292e;">// ReverseStr</span></span>
+<span class="line"><span style="color:#24292e;">type ReverseStr&lt;</span></span>
+<span class="line"><span style="color:#24292e;">    Str extends string, </span></span>
+<span class="line"><span style="color:#24292e;">    Result extends string = &#39;&#39;</span></span>
+<span class="line"><span style="color:#24292e;">&gt; = Str extends `${infer First}${infer Rest}` </span></span>
+<span class="line"><span style="color:#24292e;">    ? ReverseStr&lt;Rest, `${First}${Result}`&gt; </span></span>
+<span class="line"><span style="color:#24292e;">    : Result;</span></span></code></pre></div></div></div></main><footer class="VPDocFooter" data-v-6b87e69f data-v-ef5dee53><!--[--><!--]--><!----><nav class="prev-next" data-v-ef5dee53><div class="pager" data-v-ef5dee53><a class="pager-link prev" href="/blog/articles/js/js.html" data-v-ef5dee53><span class="desc" data-v-ef5dee53>Previous page</span><span class="title" data-v-ef5dee53>js</span></a></div><div class="pager" data-v-ef5dee53><!----></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!----><!--[--><!--]--></div></div>
+    <script>window.__VP_HASH_MAP__=JSON.parse("{\"articles_other_代码.md\":\"1da91809\",\"articles_js_js.md\":\"2c4453b8\",\"index.md\":\"40a49c5f\",\"articles_js_typescript.md\":\"309c5e85\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"打工是不可能打工\",\"description\":\"个人博客\",\"base\":\"/blog/\",\"head\":[],\"appearance\":true,\"themeConfig\":{\"logo\":\"\",\"nav\":[{\"text\":\"其他\",\"items\":[{\"text\":\"js\",\"link\":\"/articles/js/js\"},{\"text\":\"其他\",\"link\":\"/articles/other/代码\"}]}],\"sidebar\":{\"/articles/js/\":[{\"text\":\"基础\",\"items\":[{\"text\":\"js\",\"link\":\"/articles/js/js\"},{\"text\":\"typescript\",\"link\":\"/articles/js/typescript\"}]},{\"text\":\"代码段\",\"items\":[]}],\"/articles/other/\":[{\"text\":\"\",\"items\":[{\"text\":\"代码\",\"link\":\"/articles/other/代码\"}]}]},\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/3104026951\"}]},\"locales\":{},\"scrollOffset\":90,\"cleanUrls\":false}");</script>
+    
+  </body>
+</html>
