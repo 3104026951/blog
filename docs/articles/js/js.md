@@ -132,4 +132,14 @@ js是单线程的，同步代码按顺序执行，异步代码进异步队列，
 
 
 
+## 123
+
+<script setup>
+
+import FirstComponent from '../../components/first.vue'
+
+</script>
+
+
+<FirstComponent />
 
