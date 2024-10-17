@@ -9,6 +9,7 @@ import {
   watch,
   watchEffect
 } from "./chunk-V7AUFIRV.js";
+import "./chunk-5WWUZCGV.js";
 
 // node_modules/vitepress/dist/client/theme-default/index.js
 import "D:/zly/project/vitepress-starter/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";

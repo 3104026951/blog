@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "ant-design-vue": "^4.2.5",
     "vitepress": "^1.0.0-rc.25",
     "vue": "^3.3.8"
   }

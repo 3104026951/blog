@@ -137,9 +137,10 @@ js是单线程的，同步代码按顺序执行，异步代码进异步队列，
 <script setup>
 
 import FirstComponent from '../../components/first.vue'
+import SecondComponent from '../../components/sec.vue'
 
 </script>
 
-
 <FirstComponent />
+<SecondComponent  />
 
