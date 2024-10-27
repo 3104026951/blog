@@ -3,11 +3,12 @@
 
     <button :class="$style.button" @click="count++">Increment</button>
 
-    <Button>124</Button>
+    <Button @click="count++">124</Button>
+    <DatePicker />
 </template>
 <script setup>
 import { ref } from 'vue'
-import { Button } from 'ant-design-vue';
+import { Button, DatePicker } from 'ant-design-vue';
 const count = ref(0)
 </script>
 

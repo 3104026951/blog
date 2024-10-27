@@ -127,20 +127,4 @@ js是单线程的，同步代码按顺序执行，异步代码进异步队列，
 - Commonjs是单个值导出，ES6模块化可以多个值导出
 - Commonjs是动态语法可写在函数体中，ES6模块化静态语法只能写在顶层
 
-  
-
-
-
-
-## 123
-
-<script setup>
-
-import FirstComponent from '../../components/first.vue'
-import SecondComponent from '../../components/sec.vue'
-
-</script>
-
-<FirstComponent />
-<SecondComponent  />
 

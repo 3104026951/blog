@@ -16,7 +16,6 @@ function newArrFn(arr, rootValue = 0) {
          return acc 
      }, []) 
 } 
-console.log(newArrFn(arr))
 ```
 
   
