@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { Button, Input } from 'ant-design-vue';
-import FilterList from '../../components/FilterList.vue'
+import FilterForm from '../../components/FilterForm.vue'
 import ModalForm from '../../components/ModalForm.vue'
 
 const filterTitleList = ref([{
@@ -189,10 +189,10 @@ pre {
 ## 条件筛选表单组件
 
 
-<FilterList ref="childComp" :titleList="filterTitleList">
+<FilterForm ref="childComp" :titleList="filterTitleList">
     <Button size="small" style="margin-right: 10px;" @click="reset">重置</Button>
     <Button size="small" @click="submit">查询</Button>
-</FilterList>
+</FilterForm>
 
 ```js
 <template>
