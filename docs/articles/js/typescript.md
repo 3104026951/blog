@@ -1,4 +1,4 @@
-# # 泛型
+## 泛型
 
 ### 类型别名中的泛型
 
@@ -61,7 +61,7 @@ type PropTypeUnion2 = Foo[A]; // string | number | boolean
 ```
 
 
-### 多泛型关联
+## 多泛型关联
 
 
 ```
@@ -75,7 +75,7 @@ type Result1 = Conditional<'linbudu', string, 'passed!', 'rejected!'>;
 type Result2 = Conditional<'linbudu', boolean, 'passed!', 'rejected!'>;
 
 ```
-### 对象类型中的泛型
+## 对象类型中的泛型
 最常见的一个例子应该还是响应类型结构的泛型处理，预留出了实际响应数据的泛型坑位，然后在你的请求函数中就可以传入特定的响应类型了
 
 ```
@@ -101,7 +101,7 @@ function fetchUserProfile(): Promise<IRes<IUserProfileRes>> {}
 function fetchUserProfileList(): Promise<IRes<IPaginationRes<IUserProfileRes>>> {}
 
 ```
-### 函数中的泛型
+## 函数中的泛型
 在基于参数类型进行填充泛型时，其类型信息会被推断到尽可能精确的程度
 
 
@@ -121,7 +121,7 @@ pick(object, ['a', 'c']);
 
 
 ```
-### infer 关键字
+## infer 关键字
 TypeScript 中支持通过 infer 关键字来在条件类型中提取类型的某一部分信息
 
 ```
@@ -145,7 +145,7 @@ type SwapStartAndEnd<T extends any[]> = T extends [
 
 ```
 
-# 内置工具类型拓展
+## 内置工具类型拓展
 ### 内置工具类型
 在ts中有很多内置的工具类型，比如：
 ####  1.属性修饰工具类型
@@ -207,7 +207,7 @@ type BExcludeA = Exclude<SetB, SetA>; // 0 | 4
 
 ```
 
-### 属性修饰进阶
+## 属性修饰进阶
 #### 深层的属性修饰
 就是类似于深拷贝的递归调用
 
@@ -296,7 +296,7 @@ type CapStr1 = UpStr<'aaa'> // Aaa
 
 ```
 
-# TS类型编程
+## TS类型编程
 
 对传入的类型参数（泛型）做各种逻辑运算，产生新的类型，这就是类型编程
 简单点来理解就是循环、条件等各种 JS 里面有的语法它都有，JS 能写的逻辑它都能写。

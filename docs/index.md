@@ -2,21 +2,31 @@
 layout: home
 
 hero: 
-  name: "中年人的代码人生"
-  text: "记录一些学习过程"
-#   tagline: 
+  name: "零散的记录"
+  text: "DRY"
+  image:
+    src: /code.svg
+  # tagline: 
   actions:
     - theme: brand
       text: 开始阅读
-      link: /tech/
-    - theme: alt
-      text: 关于我
-      link: /about/
+      link: /articles/js/js
+
 features:
-    - title: "技术"
-      details: "记录一些学习过程"
-    - title: "生活"
-      details: "记录一些生活琐事"
-    - title: "其他"
-      details: "记录一些其他东西"
+    - title: "Js"
+      icon:
+        src: /js.svg
+      details: "js,es,ts,react"
+      link: /articles/js/js
+    - title: "Vue"
+      icon:
+        src: /vue.svg
+      details: "hooks,组件,自定义指令"
+      link: /articles/vue/vue
+    - title: "nodeJS"
+      icon:
+        src: /nodejs.svg
+      details: "nodejs,express,typeorm"
+      link: /articles/nodejs/basic
 ---
+

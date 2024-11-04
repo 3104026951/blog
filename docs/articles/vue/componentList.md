@@ -3,6 +3,45 @@ import { ref } from 'vue'
 import { Button, Input } from 'ant-design-vue';
 import FilterForm from '../../components/FilterForm.vue'
 import ModalForm from '../../components/ModalForm.vue'
+import ChartsCom from '../../components/ChartsCom.vue'
+ 
+const dataSource = ref({
+    title: {
+        text: '数据'
+    },
+    tooltip: {},
+    xAxis: {
+        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    },
+    yAxis: {},
+    series: [
+        {
+        name: '小米',
+        type: 'bar',
+        data: [60, 45, 52, 38, 49, 55, 66]
+        }
+    ]
+})
+const dataSource2 =  ref({
+    title: {
+        text: 'A股'
+    },
+    tooltip: {},
+    xAxis: {
+        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    },
+    yAxis: {},
+    series: [
+        {
+        name: 'vivo',
+        type: 'line',
+        data: [50, 80, 66, 70, 69, 71,20]
+        }
+    ]
+})
+const canvasWidth = ref('600px')
+const canvasHeight = ref('300px')
+ 
 
 const filterTitleList = ref([{
   label: '姓名',
@@ -490,3 +529,7 @@ defineExpose({
 
 ```
 
+
+## vue封装chart组件
+<ChartsCom :dataSource="dataSource" :canvasWidth="canvasWidth" :canvasHeight="canvasHeight"></ChartsCom>
+<ChartsCom :dataSource="dataSource2" :canvasWidth="canvasWidth" :canvasHeight="canvasHeight"></ChartsCom>

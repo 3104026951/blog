@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import vSpace from '../../directives/space.js'
 import vFilterInput from '../../directives/filterInput.js'
 import vFormat from '../../directives/format.js'
+import vRightClick from '../../directives/rightClick.js'
 import { Button,Input } from 'ant-design-vue'
 </script>
 <style>
@@ -96,6 +97,51 @@ export default vFormat;
 
 ```
 
+## 鼠标右键显示菜单
+<Button v-right-click="{menu:[{name:'操作1',fn:()=>{console.log('操作1')}},
+{name:'操作2',fn:()=>{console.log('操作2')}}
+]}">
+右键打开菜单
+</Button>
 
+```js
+const vRightClick = {
+    mounted(el, binding) {
+        const menu = binding.value.menu;
+        el.oncontextmenu = function (e) {
+            e.preventDefault();
+            const menuDiv = document.createElement('div');
+            menuDiv.style.position = 'fixed';
+            menuDiv.style.top = e.clientY + 'px';
+            menuDiv.style.left = e.clientX + 'px';
+            menuDiv.style.backgroundColor = '#fff';
+            menuDiv.style.border = '1px solid #ccc';
+            menuDiv.style.padding = '5px';
+            menuDiv.style.zIndex = '9999';
+            menuDiv.style.boxShadow = '0 0 5px rgba(0, 0, 0, 0.3)';
+            menuDiv.style.display = 'flex';
+            menuDiv.style.flexDirection = 'column';
+            menu.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.style.padding = '5px';
+                menuItem.style.cursor = 'pointer';
+                menuItem.innerText = item.name;
+                menuItem.onclick = function () {
+                    item.fn();
+                    menuDiv.remove();
+                }
+                menuDiv.appendChild(menuItem);
+            });
+            document.body.appendChild(menuDiv);
+        }
+        document.addEventListener('click', function () {
+            const menuDiv = document.querySelector('div[style*="position: fixed"]');
+            if (menuDiv) {
+                menuDiv.remove();
+            }
+        })
+    },
+}
 
-
+export default vRightClick;
+```
